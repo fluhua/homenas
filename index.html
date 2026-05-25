@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeNAS - 家用私有云存储</title>
+<title>家庭时光 - 家用私有云存储</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='64' y2='64'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12L14 30h4v20h12V36h4v14h12V30h4L32 12z' fill='%23fff'/%3E%3Crect x='26' y='38' width='12' height='12' rx='2' fill='%230d9488'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='64' y2='64'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12L14 30h4v20h12V36h4v14h12V30h4L32 12z' fill='%23fff'/%3E%3Crect x='26' y='38' width='12' height='12' rx='2' fill='%230d9488'/%3E%3C/svg%3E">
 <style>
@@ -64,9 +64,17 @@
   .step p{font-size:14px;color:#94a3b8}
 
   /* downloads */
+  .platform-panel{margin-top:40px;padding:24px;border-radius:20px;background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(13,148,136,.09));border:1px solid rgba(147,197,253,.18);display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .platform-panel h3{font-size:18px;color:#f8fafc;margin-bottom:4px}
+  .platform-panel p{font-size:14px;color:#94a3b8}
+  .platform-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .platform-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:12px;color:#cbd5e1;margin-bottom:10px}
   .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:48px}
-  .dl-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:28px;text-align:center;transition:border-color .3s,transform .3s}
+  .dl-grid.all-downloads{margin-top:24px}
+  .dl-card{position:relative;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:28px;text-align:center;transition:border-color .3s,transform .3s,box-shadow .3s}
   .dl-card:hover{border-color:rgba(59,130,246,.25);transform:translateY(-2px)}
+  .dl-card.recommended{border-color:rgba(94,234,212,.35);box-shadow:0 12px 40px rgba(13,148,136,.12)}
+  .dl-card.recommended::before{content:attr(data-recommend-label);position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:999px;background:rgba(13,148,136,.18);color:#5eead4;font-size:11px;font-weight:600}
   .dl-card .platform-icon{font-size:36px;margin-bottom:14px}
   .dl-card h3{font-size:17px;font-weight:600;color:#f1f5f9;margin-bottom:6px}
   .dl-card .version{font-size:12px;color:#64748b;margin-bottom:16px}
@@ -114,6 +122,9 @@
     .hero{padding:120px 0 64px}
     .features-grid{grid-template-columns:1fr}
     .dl-grid{grid-template-columns:1fr}
+    .platform-panel{align-items:flex-start}
+    .platform-actions{width:100%}
+    .platform-actions .dl-btn{width:100%}
     .steps{grid-template-columns:1fr}
     footer .container{flex-direction:column}
   }
@@ -134,7 +145,7 @@
       <div class="icon">
         <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><path d="M32 12L14 30h4v20h12V36h4v14h12V30h4L32 12z" fill="#fff"/><rect x="26" y="38" width="12" height="12" rx="2" fill="#0d9488"/></svg>
       </div>
-      HomeNAS
+      <span data-i18n="brand.name">家庭时光</span>
     </a>
     <div class="nav-right">
       <div class="nav-links">
@@ -156,7 +167,7 @@
   <div class="container">
     <div class="hero-badge animate" style="opacity:0" data-i18n="hero.badge">v2.0 — 全新多用户 & SQLite 架构</div>
     <h1 class="animate animate-d1" style="opacity:0" data-i18n="hero.title">你的数据<br>归于你自己</h1>
-    <p class="animate animate-d2" style="opacity:0" data-i18n="hero.desc">HomeNAS 是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。</p>
+    <p class="animate animate-d2" style="opacity:0" data-i18n="hero.desc">家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。</p>
     <div class="hero-actions animate animate-d3" style="opacity:0">
       <a href="#downloads" class="btn btn-primary" data-i18n="hero.cta1">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -239,28 +250,42 @@
     <div class="section-label" data-i18n="dl.label">多端下载</div>
     <h2 class="section-title" data-i18n="dl.title">选你所需的平台</h2>
     <p class="section-desc" data-i18n="dl.desc">所有版本均免费、开源。服务端为核心，其余客户端可按需搭配。</p>
-    <div class="dl-grid">
-      <div class="dl-card">
+    <div class="platform-panel" id="platform-panel">
+      <div>
+        <div class="platform-pill" id="platform-pill" data-i18n="dl.detecting">正在识别设备</div>
+        <h3 id="recommended-title" data-i18n="dl.recommended.title">为当前设备推荐</h3>
+        <p id="recommended-desc" data-i18n="dl.recommended.desc">我们会根据你的系统优先显示最合适的下载项，下面仍可下载所有平台版本。</p>
+      </div>
+      <div class="platform-actions" id="recommended-actions"></div>
+    </div>
+    <div class="dl-grid all-downloads">
+      <div class="dl-card" data-platform="server">
         <div class="platform-icon">🖥️</div>
         <h3 data-i18n="dl.srv.name">服务端</h3>
-        <div class="version" data-i18n="dl.srv.version">v2.0 · macOS / Linux</div>
+        <div class="version" data-i18n="dl.srv.version">v2.0 · macOS / Linux / Windows</div>
         <div class="dl-btns">
           <a data-dl="srv-mac" class="dl-btn" data-i18n="dl.srv.mac">macOS (Universal)</a>
           <a data-dl="srv-linux-amd64" class="dl-btn secondary" data-i18n="dl.srv.linux">Linux (amd64)</a>
           <a data-dl="srv-linux-arm64" class="dl-btn secondary">Linux (arm64)</a>
+          <a data-dl="srv-windows-amd64" class="dl-btn secondary" data-i18n="dl.srv.windows">Windows (amd64)</a>
+          <a data-dl="srv-windows-arm64" class="dl-btn secondary">Windows (arm64)</a>
         </div>
         <p class="dl-note" data-i18n="dl.srv.note">含内嵌 Web UI · Go 单二进制</p>
       </div>
-      <div class="dl-card">
+      <div class="dl-card" data-platform="desktop">
         <div class="platform-icon">🍎</div>
-        <h3 data-i18n="dl.mac.name">macOS 桌面</h3>
-        <div class="version">v2.0 · macOS 13+</div>
+        <h3 data-i18n="dl.desktop.name">桌面客户端</h3>
+        <div class="version" data-i18n="dl.desktop.version">v2.0 · macOS / Windows / Linux</div>
         <div class="dl-btns">
-          <a data-dl="mac-dmg" class="dl-btn" data-i18n="dl.mac.btn">下载 DMG</a>
+          <a data-dl="desktop-mac-dmg" class="dl-btn" data-i18n="dl.desktop.mac">macOS DMG</a>
+          <a data-dl="desktop-windows-amd64" class="dl-btn secondary" data-i18n="dl.desktop.windows">Windows (amd64)</a>
+          <a data-dl="desktop-windows-arm64" class="dl-btn secondary">Windows (arm64)</a>
+          <a data-dl="desktop-linux-amd64" class="dl-btn secondary" data-i18n="dl.desktop.linux">Linux (amd64)</a>
+          <a data-dl="desktop-linux-arm64" class="dl-btn secondary">Linux (arm64)</a>
         </div>
-        <p class="dl-note" data-i18n="dl.mac.note">原生窗口 + 服务端一体化 · 公证签名</p>
+        <p class="dl-note" data-i18n="dl.desktop.note">原生窗口 + 服务端一体化 · 适合个人电脑常驻</p>
       </div>
-      <div class="dl-card">
+      <div class="dl-card" data-platform="ios">
         <div class="platform-icon">📱</div>
         <h3>iOS</h3>
         <div class="version">v2.0 · iOS 17+</div>
@@ -270,7 +295,7 @@
         </div>
         <p class="dl-note" data-i18n="dl.ios.note">自动备份 · 共享相册 · Live Photo 支持</p>
       </div>
-      <div class="dl-card">
+      <div class="dl-card" data-platform="android">
         <div class="platform-icon">🤖</div>
         <h3>Android</h3>
         <div class="version">v2.0 · Android 7.0+</div>
@@ -308,7 +333,7 @@
         <div class="g-num">3</div>
         <div class="g-body">
           <h3 data-i18n="guide.g3t">手机安装 App 并配对</h3>
-          <p data-i18n="guide.g3d">从 App Store / Google Play（或直接下载 APK）安装 HomeNAS。打开 App 会自动扫描局域网中的服务器，点击连接后输入注册码即可完成绑定。</p>
+          <p data-i18n="guide.g3d">从 App Store / Google Play（或直接下载 APK）安装家庭时光。打开 App 会自动扫描局域网中的服务器，点击连接后输入注册码即可完成绑定。</p>
         </div>
       </div>
       <div class="guide-step">
@@ -335,14 +360,14 @@
     <div class="section-label" data-i18n="faq.label">常见问题</div>
     <h2 class="section-title" data-i18n="faq.title">你可能想问的</h2>
     <div class="faq-list">
-      <details><summary data-i18n="faq.q1">HomeNAS 和百度网盘 / iCloud 有什么区别？</summary><div class="faq-body" data-i18n="faq.a1">HomeNAS 的数据完全存储在你自己的硬件上——电脑、树莓派或 NAS 设备。没有月费订阅、没有隐私泄露风险、没有容量限制（只取决于你的硬盘大小）。照片文件不需要经过第三方服务器。</div></details>
+      <details><summary data-i18n="faq.q1">家庭时光和百度网盘 / iCloud 有什么区别？</summary><div class="faq-body" data-i18n="faq.a1">家庭时光的数据完全存储在你自己的硬件上——电脑、树莓派或 NAS 设备。没有月费订阅、没有隐私泄露风险、没有容量限制（只取决于你的硬盘大小）。照片文件不需要经过第三方服务器。</div></details>
       <details><summary data-i18n="faq.q2">需要一直开着电脑吗？</summary><div class="faq-body" data-i18n="faq.a2">是的，服务端需要持续运行才能接收备份。但 Go 编写的服务端十分轻量——空闲时内存占用不到 20MB。你可以把它跑在闲置的旧电脑、树莓派、软路由或任何 Linux 设备上。</div></details>
-      <details><summary data-i18n="faq.q3">外面能用吗？如何从外网访问？</summary><div class="faq-body" data-i18n="faq.a3">HomeNAS 默认在局域网内工作。如果你需要从外网访问，建议通过 Tailscale / ZeroTier 等虚拟组网工具，或者配置反向代理（Nginx / Caddy）并开启 HTTPS。我们不推荐直接将端口暴露到公网。</div></details>
+      <details><summary data-i18n="faq.q3">外面能用吗？如何从外网访问？</summary><div class="faq-body" data-i18n="faq.a3">家庭时光默认在局域网内工作。如果你需要从外网访问，建议通过 Tailscale / ZeroTier 等虚拟组网工具，或者配置反向代理（Nginx / Caddy）并开启 HTTPS。我们不推荐直接将端口暴露到公网。</div></details>
       <details><summary data-i18n="faq.q4">数据安全吗？被攻击了怎么办？</summary><div class="faq-body" data-i18n="faq.a4">所有通信基于 TLS 加密，客户端通过证书指纹固定防止中间人攻击。由于数据存储在你的本地网络内，攻击面远小于公有云。建议：保持服务端更新、使用强密码、不在公网暴露端口。</div></details>
       <details><summary data-i18n="faq.q5">多台手机可以同时备份吗？文件会混在一起吗？</summary><div class="faq-body" data-i18n="faq.a5">可以。每台手机用不同账户绑定后，各自的文件和备份完全隔离——即使连接同一个服务端，用户也看不到彼此的文件（管理员除外）。共享相册是跨用户的协作空间。</div></details>
       <details><summary data-i18n="faq.q6">支持 Live Photo 和视频备份吗？</summary><div class="faq-body" data-i18n="faq.a6">iOS 端完整支持 Live Photo（照片 + 视频分别上传并关联）；Android 端支持照片和视频。服务端自动生成缩略图，Web UI 和 App 均可直接预览和播放。</div></details>
       <details><summary data-i18n="faq.q7">服务端支持哪些平台？</summary><div class="faq-body" data-i18n="faq.a7">服务端提供 macOS (amd64/arm64) 和 Linux (amd64/arm64) 的预编译二进制。同时提供 macOS 原生桌面应用（.dmg）。Windows 用户可通过 WSL2 运行 Linux 版本。</div></details>
-      <details><summary data-i18n="faq.q8">HomeNAS 是免费的吗？开源吗？</summary><div class="faq-body" data-i18n="faq.a8">是的，完全免费。项目源代码开放，你可以自行审查、修改和重新分发。</div></details>
+      <details><summary data-i18n="faq.q8">家庭时光是免费的吗？开源吗？</summary><div class="faq-body" data-i18n="faq.a8">是的，完全免费。项目源代码开放，你可以自行审查、修改和重新分发。</div></details>
     </div>
   </div>
 </section>
@@ -362,7 +387,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <span class="copy">&copy; 2026 HomeNAS</span>
+    <span class="copy" data-i18n="footer.copy">&copy; 2026 家庭时光</span>
     <div class="links">
       <a href="#">GitHub</a>
       <a href="#" data-i18n="footer.privacy">隐私政策</a>
@@ -376,32 +401,49 @@
 // ============================================================
 // DOWNLOAD LINKS — fill in your actual URLs below
 // ============================================================
+const DOWNLOAD_BASE = 'https://homenas.openyhx.workers.dev';
 const DOWNLOADS = {
   // Server
-  'srv-mac':            '',   // e.g. https://github.com/.../nas-server-2.0.0-darwin-universal.tar.gz
-  'srv-linux-amd64':    '',   // e.g. https://github.com/.../nas-server-2.0.0-linux-amd64.tar.gz
-  'srv-linux-arm64':    '',   // e.g. https://github.com/.../nas-server-2.0.0-linux-arm64.tar.gz
-  // macOS Desktop
-  'mac-dmg':            '',   // e.g. https://github.com/.../HomeNAS-2.0.0.dmg
+  'srv-mac':            DOWNLOAD_BASE,
+  'srv-linux-amd64':    DOWNLOAD_BASE,
+  'srv-linux-arm64':    DOWNLOAD_BASE,
+  'srv-windows-amd64':  DOWNLOAD_BASE,
+  'srv-windows-arm64':  DOWNLOAD_BASE,
+  // Desktop
+  'desktop-mac-dmg':        './HomeNAS-darwin-universal.dmg',
+  'desktop-windows-amd64':  DOWNLOAD_BASE,
+  'desktop-windows-arm64':  DOWNLOAD_BASE,
+  'desktop-linux-amd64':    DOWNLOAD_BASE,
+  'desktop-linux-arm64':    DOWNLOAD_BASE,
   // iOS
-  'ios-store':          '',   // e.g. https://apps.apple.com/app/homenas/idXXXXXXXX
-  'ios-testflight':     '',   // e.g. https://testflight.apple.com/join/XXXXXXXX
+  'ios-store':          DOWNLOAD_BASE,
+  'ios-testflight':     DOWNLOAD_BASE,
   // Android
-  'android-apk':        '',   // e.g. https://github.com/.../app-release.apk
-  'android-play':       '',   // e.g. https://play.google.com/store/apps/details?id=com.homenas.android
+  'android-apk':        './HomeNAS_1.0.0_20260526_012108.apk',
+  'android-play':       DOWNLOAD_BASE,
+};
+
+const PLATFORM_DOWNLOADS = {
+  macos: ['desktop-mac-dmg', 'srv-mac'],
+  ios: ['ios-store', 'ios-testflight'],
+  android: ['android-apk', 'android-play'],
+  linux: ['desktop-linux-amd64', 'desktop-linux-arm64', 'srv-linux-amd64', 'srv-linux-arm64'],
+  windows: ['desktop-windows-amd64', 'desktop-windows-arm64', 'srv-windows-amd64', 'srv-windows-arm64'],
+  unknown: ['desktop-mac-dmg', 'srv-mac', 'android-apk', 'ios-store'],
 };
 
 // ===== I18N =====
 const i18n = {
   'zh-CN': {
-    pageTitle: 'HomeNAS - 家用私有云存储',
+    pageTitle: '家庭时光 - 家用私有云存储',
+    'brand.name': '家庭时光',
     'nav.features': '功能',
     'nav.downloads': '下载',
     'nav.guide': '指引',
     'nav.faq': '常见问题',
     'hero.badge': 'v2.0 — 全新多用户 & SQLite 架构',
     'hero.title': '你的数据<br>归于你自己',
-    'hero.desc': 'HomeNAS 是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。',
+    'hero.desc': '家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。',
     'hero.cta1': '免费下载',
     'hero.cta2': '快速上手 →',
     'features.label': '核心功能',
@@ -418,7 +460,7 @@ const i18n = {
     'features.f5t': '端到端安全',
     'features.f5d': '全程 HTTPS + 自签名 TLS + 证书指纹固定。mDNS 局域网自动发现，数据不出内网。',
     'features.f6t': '跨平台覆盖',
-    'features.f6d': '提供 iOS / Android 移动端、macOS 桌面应用，以及内嵌 Web UI。手机、平板、电脑，随时随地访问。',
+    'features.f6d': '提供 iOS / Android 移动端、macOS / Windows / Linux 桌面应用，以及内嵌 Web UI。手机、平板、电脑，随时随地访问。',
     'steps.label': '三步开始',
     'steps.title': '简单到只需要几分钟',
     'steps.s1t': '部署服务器',
@@ -430,14 +472,34 @@ const i18n = {
     'dl.label': '多端下载',
     'dl.title': '选你所需的平台',
     'dl.desc': '所有版本均免费、开源。服务端为核心，其余客户端可按需搭配。',
+    'dl.detecting': '正在识别设备',
+    'dl.recommended.title': '为当前设备推荐',
+    'dl.recommended.desc': '我们会根据你的系统优先显示最合适的下载项，下面仍可下载所有平台版本。',
+    'dl.recommend.badge': '推荐',
+    'dl.platform.macos': '已识别：macOS',
+    'dl.platform.ios': '已识别：iOS / iPadOS',
+    'dl.platform.android': '已识别：Android',
+    'dl.platform.linux': '已识别：Linux',
+    'dl.platform.windows': '已识别：Windows',
+    'dl.platform.unknown': '未识别设备',
+    'dl.recommended.macos': '当前是 macOS。建议下载桌面版；如果要部署家庭服务器，也可以下载服务端。',
+    'dl.recommended.ios': '当前是 iPhone 或 iPad。建议下载 iOS 客户端；服务端请在电脑或 NAS 上安装。',
+    'dl.recommended.android': '当前是 Android。建议下载 APK 或进入应用商店；服务端请在电脑或 NAS 上安装。',
+    'dl.recommended.linux': '当前是 Linux。建议下载桌面客户端；如果要部署家庭服务器，也可以下载对应架构的服务端。',
+    'dl.recommended.windows': '当前是 Windows。建议下载桌面客户端；如果要部署家庭服务器，也可以下载 Windows 服务端 .exe。',
+    'dl.recommended.unknown': '没有识别出当前平台。你可以直接从下方选择任意平台下载。',
     'dl.srv.name': '服务端',
-    'dl.srv.version': 'v2.0 · macOS / Linux',
+    'dl.srv.version': 'v2.0 · macOS / Linux / Windows',
     'dl.srv.mac': 'macOS (Universal)',
     'dl.srv.linux': 'Linux (amd64)',
+    'dl.srv.windows': 'Windows (amd64)',
     'dl.srv.note': '含内嵌 Web UI · Go 单二进制',
-    'dl.mac.name': 'macOS 桌面',
-    'dl.mac.btn': '下载 DMG',
-    'dl.mac.note': '原生窗口 + 服务端一体化 · 公证签名',
+    'dl.desktop.name': '桌面客户端',
+    'dl.desktop.version': 'v2.0 · macOS / Windows / Linux',
+    'dl.desktop.mac': 'macOS DMG',
+    'dl.desktop.windows': 'Windows (amd64)',
+    'dl.desktop.linux': 'Linux (amd64)',
+    'dl.desktop.note': '原生窗口 + 服务端一体化 · 适合个人电脑常驻',
     'dl.ios.store': 'App Store',
     'dl.ios.note': '自动备份 · 共享相册 · Live Photo 支持',
     'dl.and.apk': '下载 APK',
@@ -449,19 +511,19 @@ const i18n = {
     'guide.g2t': '登录 Web 管理面板',
     'guide.g2d': '浏览器打开 https://&lt;服务器IP&gt;:8443，用管理员账号登录。可在「用户」页创建家庭成员账户，在「设备」页生成注册码。',
     'guide.g3t': '手机安装 App 并配对',
-    'guide.g3d': '从 App Store / Google Play（或直接下载 APK）安装 HomeNAS。打开 App 会自动扫描局域网中的服务器，点击连接后输入注册码即可完成绑定。',
+    'guide.g3d': '从 App Store / Google Play（或直接下载 APK）安装家庭时光。打开 App 会自动扫描局域网中的服务器，点击连接后输入注册码即可完成绑定。',
     'guide.g4t': '开启自动备份',
     'guide.g4d': '在 App「备份」标签页中开启自动备份。连接 Wi-Fi 时手机相册将自动上传。你可以设置在 Wi-Fi 下才备份、仅充电时备份等偏好。',
     'guide.g5t': '浏览、分享与协作',
     'guide.g5d': '在「云端文件」标签查看已备份内容。创建共享相册与家人协作整理，通过「分享链接」安全地分享给外部访客。',
     'faq.label': '常见问题',
     'faq.title': '你可能想问的',
-    'faq.q1': 'HomeNAS 和百度网盘 / iCloud 有什么区别？',
-    'faq.a1': 'HomeNAS 的数据完全存储在你自己的硬件上——电脑、树莓派或 NAS 设备。没有月费订阅、没有隐私泄露风险、没有容量限制（只取决于你的硬盘大小）。照片文件不需要经过第三方服务器。',
+    'faq.q1': '家庭时光和百度网盘 / iCloud 有什么区别？',
+    'faq.a1': '家庭时光的数据完全存储在你自己的硬件上——电脑、树莓派或 NAS 设备。没有月费订阅、没有隐私泄露风险、没有容量限制（只取决于你的硬盘大小）。照片文件不需要经过第三方服务器。',
     'faq.q2': '需要一直开着电脑吗？',
     'faq.a2': '是的，服务端需要持续运行才能接收备份。但 Go 编写的服务端十分轻量——空闲时内存占用不到 20MB。你可以把它跑在闲置的旧电脑、树莓派、软路由或任何 Linux 设备上。',
     'faq.q3': '外面能用吗？如何从外网访问？',
-    'faq.a3': 'HomeNAS 默认在局域网内工作。如果你需要从外网访问，建议通过 Tailscale / ZeroTier 等虚拟组网工具，或者配置反向代理（Nginx / Caddy）并开启 HTTPS。我们不推荐直接将端口暴露到公网。',
+    'faq.a3': '家庭时光默认在局域网内工作。如果你需要从外网访问，建议通过 Tailscale / ZeroTier 等虚拟组网工具，或者配置反向代理（Nginx / Caddy）并开启 HTTPS。我们不推荐直接将端口暴露到公网。',
     'faq.q4': '数据安全吗？被攻击了怎么办？',
     'faq.a4': '所有通信基于 TLS 加密，客户端通过证书指纹固定防止中间人攻击。由于数据存储在你的本地网络内，攻击面远小于公有云。建议：保持服务端更新、使用强密码、不在公网暴露端口。',
     'faq.q5': '多台手机可以同时备份吗？文件会混在一起吗？',
@@ -469,18 +531,20 @@ const i18n = {
     'faq.q6': '支持 Live Photo 和视频备份吗？',
     'faq.a6': 'iOS 端完整支持 Live Photo（照片 + 视频分别上传并关联）；Android 端支持照片和视频。服务端自动生成缩略图，Web UI 和 App 均可直接预览和播放。',
     'faq.q7': '服务端支持哪些平台？',
-    'faq.a7': '服务端提供 macOS (amd64/arm64) 和 Linux (amd64/arm64) 的预编译二进制。同时提供 macOS 原生桌面应用（.dmg）。Windows 用户可通过 WSL2 运行 Linux 版本。',
-    'faq.q8': 'HomeNAS 是免费的吗？开源吗？',
+    'faq.a7': '服务端提供 macOS、Linux、Windows 的预编译二进制。桌面客户端也规划 macOS、Windows、Linux 版本，普通用户优先下载桌面客户端，NAS 或服务器部署再下载服务端。',
+    'faq.q8': '家庭时光是免费的吗？开源吗？',
     'faq.a8': '是的，完全免费。项目源代码开放，你可以自行审查、修改和重新分发。',
     'cta.title': '准备好掌控自己的数据了吗？',
     'cta.desc': '免订阅 · 不限容量 · 数据永不离开你的家',
     'cta.btn': '立即下载',
+    'footer.copy': '© 2026 家庭时光',
     'footer.privacy': '隐私政策',
     'footer.api': 'API 文档',
     'footer.build': '构建指南',
   },
   'en': {
     pageTitle: 'HomeNAS - Private Cloud Storage for Home',
+    'brand.name': 'HomeNAS',
     'nav.features': 'Features',
     'nav.downloads': 'Download',
     'nav.guide': 'Guide',
@@ -504,7 +568,7 @@ const i18n = {
     'features.f5t': 'End-to-End Security',
     'features.f5d': 'Full HTTPS with self-signed TLS and certificate pinning. mDNS LAN auto-discovery keeps your data within the local network.',
     'features.f6t': 'Cross-Platform',
-    'features.f6d': 'Available on iOS, Android, macOS desktop, and a built-in Web UI. Access from phone, tablet, or computer anytime.',
+    'features.f6d': 'Available on iOS, Android, macOS / Windows / Linux desktop, and a built-in Web UI. Access from phone, tablet, or computer anytime.',
     'steps.label': '3 Steps to Start',
     'steps.title': 'Simple enough to set up in minutes',
     'steps.s1t': 'Deploy Server',
@@ -516,14 +580,34 @@ const i18n = {
     'dl.label': 'Downloads',
     'dl.title': 'Choose Your Platform',
     'dl.desc': 'All versions are free and open source. The server is the core — other clients are optional companions.',
+    'dl.detecting': 'Detecting device',
+    'dl.recommended.title': 'Recommended for this device',
+    'dl.recommended.desc': 'We prioritize the best download for your system. All platform downloads remain available below.',
+    'dl.recommend.badge': 'Recommended',
+    'dl.platform.macos': 'Detected: macOS',
+    'dl.platform.ios': 'Detected: iOS / iPadOS',
+    'dl.platform.android': 'Detected: Android',
+    'dl.platform.linux': 'Detected: Linux',
+    'dl.platform.windows': 'Detected: Windows',
+    'dl.platform.unknown': 'Device not recognized',
+    'dl.recommended.macos': 'You are on macOS. Download the desktop app, or get the server package if this Mac will host your HomeNAS server.',
+    'dl.recommended.ios': 'You are on iPhone or iPad. Download the iOS client; install the server on a computer or NAS.',
+    'dl.recommended.android': 'You are on Android. Download the APK or open the app store; install the server on a computer or NAS.',
+    'dl.recommended.linux': 'You are on Linux. Download the desktop client, or get the server package if this machine will host your HomeNAS server.',
+    'dl.recommended.windows': 'You are on Windows. Download the desktop client, or get the Windows server .exe if this PC will host your HomeNAS server.',
+    'dl.recommended.unknown': 'We could not identify this platform. Choose any platform download below.',
     'dl.srv.name': 'Server',
-    'dl.srv.version': 'v2.0 · macOS / Linux',
+    'dl.srv.version': 'v2.0 · macOS / Linux / Windows',
     'dl.srv.mac': 'macOS (Universal)',
     'dl.srv.linux': 'Linux (amd64)',
+    'dl.srv.windows': 'Windows (amd64)',
     'dl.srv.note': 'Embedded Web UI · single Go binary',
-    'dl.mac.name': 'macOS Desktop',
-    'dl.mac.btn': 'Download DMG',
-    'dl.mac.note': 'Native window + server, notarized & signed',
+    'dl.desktop.name': 'Desktop Client',
+    'dl.desktop.version': 'v2.0 · macOS / Windows / Linux',
+    'dl.desktop.mac': 'macOS DMG',
+    'dl.desktop.windows': 'Windows (amd64)',
+    'dl.desktop.linux': 'Linux (amd64)',
+    'dl.desktop.note': 'Native window + integrated server · for always-on personal computers',
     'dl.ios.store': 'App Store',
     'dl.ios.note': 'Auto backup · Shared albums · Live Photo',
     'dl.and.apk': 'Download APK',
@@ -555,12 +639,13 @@ const i18n = {
     'faq.q6': 'Does it support Live Photo and video backup?',
     'faq.a6': 'iOS fully supports Live Photo (photo + video uploaded separately and linked). Android supports photos and videos. The server auto-generates thumbnails, and both Web UI and apps support preview and playback.',
     'faq.q7': 'Which platforms does the server support?',
-    'faq.a7': 'Pre-built binaries for macOS (amd64/arm64) and Linux (amd64/arm64). A native macOS desktop app (.dmg) is also available. Windows users can run the Linux version via WSL2.',
+    'faq.a7': 'Server binaries are available for macOS, Linux, and Windows. Desktop clients are planned for macOS, Windows, and Linux. Regular users should start with the desktop client; NAS/server deployments should use the server package.',
     'faq.q8': 'Is HomeNAS free? Is it open source?',
     'faq.a8': 'Yes, completely free and open source. You can review, modify, and redistribute the source code.',
     'cta.title': 'Ready to Take Control of Your Data?',
     'cta.desc': 'No subscription · Unlimited storage · Your data never leaves your home',
     'cta.btn': 'Download Now',
+    'footer.copy': '© 2026 HomeNAS',
     'footer.privacy': 'Privacy Policy',
     'footer.api': 'API Docs',
     'footer.build': 'Build Guide',
@@ -573,6 +658,8 @@ function applyDownloadLinks() {
     const url = DOWNLOADS[el.dataset.dl];
     if (url) {
       el.href = url;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
       el.style.display = '';
     } else {
       el.removeAttribute('href');
@@ -581,6 +668,56 @@ function applyDownloadLinks() {
       el.style.cursor = 'default';
       el.title = 'Coming soon';
     }
+  });
+}
+
+function detectPlatform() {
+  const ua = navigator.userAgent || '';
+  const platform = navigator.platform || '';
+  const uaDataPlatform = navigator.userAgentData?.platform || '';
+  const text = `${ua} ${platform} ${uaDataPlatform}`.toLowerCase();
+
+  if (/iphone|ipad|ipod/.test(text) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return 'ios';
+  if (/android/.test(text)) return 'android';
+  if (/mac/.test(text)) return 'macos';
+  if (/win/.test(text)) return 'windows';
+  if (/linux|x11/.test(text)) return 'linux';
+  return 'unknown';
+}
+
+function applyPlatformRecommendation(lang) {
+  const dict = i18n[lang];
+  const platform = detectPlatform();
+  const downloads = PLATFORM_DOWNLOADS[platform] || PLATFORM_DOWNLOADS.unknown;
+  const pill = document.getElementById('platform-pill');
+  const desc = document.getElementById('recommended-desc');
+  const actions = document.getElementById('recommended-actions');
+
+  if (pill) pill.textContent = dict[`dl.platform.${platform}`] || dict['dl.platform.unknown'];
+  if (desc) desc.textContent = dict[`dl.recommended.${platform}`] || dict['dl.recommended.unknown'];
+
+  document.querySelectorAll('.dl-card').forEach(card => {
+    const isRecommended =
+      card.dataset.platform === platform ||
+      (card.dataset.platform === 'desktop' && ['macos', 'windows', 'linux'].includes(platform)) ||
+      (platform === 'linux' && card.dataset.platform === 'server') ||
+      (platform === 'windows' && card.dataset.platform === 'server');
+    card.classList.toggle('recommended', isRecommended);
+    card.dataset.recommendLabel = dict['dl.recommend.badge'];
+  });
+
+  if (!actions) return;
+  actions.textContent = '';
+  downloads.forEach(key => {
+    const source = document.querySelector(`[data-dl="${key}"]`);
+    if (!source) return;
+    const link = document.createElement('a');
+    link.className = source.className;
+    link.href = DOWNLOADS[key] || DOWNLOAD_BASE;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = source.textContent.trim();
+    actions.appendChild(link);
   });
 }
 
@@ -648,6 +785,8 @@ function applyLang(lang) {
       el.textContent = dict[key];
     }
   });
+
+  applyPlatformRecommendation(lang);
 }
 
 function replaceTextContent(el, text) {
@@ -682,6 +821,7 @@ applyLang(currentLang);
 
 // Apply download links
 applyDownloadLinks();
+applyPlatformRecommendation(currentLang);
 
 // Nav scroll effect
 const nav = document.getElementById('nav');
