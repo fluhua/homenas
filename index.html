@@ -28,14 +28,14 @@
 <link rel="alternate" hreflang="x-default" href="https://homenas.openyhx.workers.dev">
 <link rel="icon" type="image/png" href="./launch_logo.png">
 <link rel="apple-touch-icon" href="./launch_logo.png">
-<script type="application/ld+json">
+<script type="application/ld+json" id="ld-json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "家庭时光 HomeNAS",
+  "name": "HomeNAS",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "macOS, Windows, Android",
-  "description": "家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密。",
+  "description": "HomeNAS is a private cloud storage that runs at home. Automatic photo backup, multi-user file isolation, end-to-end TLS encryption.",
   "url": "https://homenas.openyhx.workers.dev",
   "offers": {
     "@type": "Offer",
@@ -654,9 +654,9 @@ const i18n = {
     'overview.title': '服务端 + 管理面板 + 手机 App 三端协作',
     'overview.desc': '在电脑上运行服务端，通过浏览器管理用户和设备，Android 手机自动备份照片视频到家中服务器。',
     'overview.a1t': '桌面服务端',
-    'overview.a1d': '在 macOS 或 Windows 电脑上运行 nas-server，作为文件存储和管理的核心。轻量级 Go 程序，空闲内存不到 20MB。',
+    'overview.a1d': '在 macOS 或 Windows 电脑上运行 <code>nas-server</code>，作为文件存储和管理的核心。轻量级 Go 程序，空闲内存不到 20MB。',
     'overview.a2t': 'Web 管理面板',
-    'overview.a2d': '浏览器打开 https://<IP>:8443 即可管理一切：创建家庭成员账户、生成设备注册码、浏览和分享文件。',
+    'overview.a2d': '浏览器打开 <code>https://&lt;IP&gt;:8443</code> 即可管理一切：创建家庭成员账户、生成设备注册码、浏览和分享文件。',
     'overview.a3t': 'Android 手机 App',
     'overview.a3d': '安装 App 后用注册码配对，连接家中 Wi-Fi 即自动备份相册。支持增量上传与哈希去重，省流量省空间。',
     'platforms.label': '平台支持',
@@ -679,7 +679,7 @@ const i18n = {
     'guide.tag.desktop': '桌面端',
     'guide.tag.phone': '手机端',
     'guide.g1t': '下载服务端并创建账号',
-    'guide.g1d': 'macOS 下载 .dmg、Windows 下载 .exe，安装运行后创建家庭成员账号。',
+    'guide.g1d': 'macOS 下载 <code>.dmg</code>、Windows 下载 <code>.exe</code>，安装运行后创建家庭成员账号。',
     'guide.g2t': '手机安装 App 并配对',
     'guide.g2d': 'Android 手机下载安装 APK，打开后自动发现局域网服务器并完成配对。',
     'dl.label': '多端下载',
@@ -778,9 +778,9 @@ const i18n = {
     'overview.title': 'Server + Web Panel + Mobile App Working Together',
     'overview.desc': 'Run the server on your computer, manage users and devices via browser, Android phone auto-backs up photos and videos to your home server.',
     'overview.a1t': 'Desktop Server',
-    'overview.a1d': 'Run nas-server on macOS or Windows as the core for file storage and management. Lightweight Go program, under 20MB memory at idle.',
+    'overview.a1d': 'Run <code>nas-server</code> on macOS or Windows as the core for file storage and management. Lightweight Go program, under 20MB memory at idle.',
     'overview.a2t': 'Web Admin Panel',
-    'overview.a2d': 'Open https://<IP>:8443 in your browser to manage everything: create family accounts, generate device codes, browse and share files.',
+    'overview.a2d': 'Open <code>https://&lt;IP&gt;:8443</code> in your browser to manage everything: create family accounts, generate device codes, browse and share files.',
     'overview.a3t': 'Android App',
     'overview.a3d': 'Install the app, pair with a registration code, and auto-backup your camera roll when connected to home Wi-Fi. Incremental upload with hash dedup.',
     'platforms.label': 'Platform Support',
@@ -803,7 +803,7 @@ const i18n = {
     'guide.tag.desktop': 'Desktop',
     'guide.tag.phone': 'Phone',
     'guide.g1t': 'Download Server & Create Accounts',
-    'guide.g1d': 'Download .dmg for macOS or .exe for Windows. Install and run, then create family member accounts.',
+    'guide.g1d': 'Download <code>.dmg</code> for macOS or <code>.exe</code> for Windows. Install and run, then create family member accounts.',
     'guide.g2t': 'Install App & Pair',
     'guide.g2d': 'Download and install the APK on your Android phone. The app auto-discovers the server on your LAN and pairs with it.',
     'dl.label': 'Downloads',
@@ -1034,7 +1034,7 @@ function applyLang(lang) {
 }
 
 function replaceTextContent(el, text) {
-  if (text.includes('<br>')) {
+  if (/<[a-z][^>]*>/i.test(text)) {
     el.innerHTML = text;
     return;
   }
