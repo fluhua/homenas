@@ -704,17 +704,14 @@ const i18n = {
     'dl.win.name': 'Windows 服务端',
     'dl.win.version': 'v2.0 · Windows 10+',
     'dl.win.installer': '下载安装程序',
-    'dl.win.filename': '家庭时光-Windows-安装程序.exe',
     'dl.win.note': '原生桌面应用 · 内嵌 Web UI',
     'dl.mac.name': 'macOS 服务端',
     'dl.mac.version': 'v2.0 · macOS 12+',
     'dl.mac.dmg': '下载 DMG',
-    'dl.mac.filename': '家庭时光-macOS.dmg',
     'dl.mac.note': '原生桌面应用 · 内嵌 Web UI',
     'dl.and.name': 'Android 客户端',
     'dl.and.version': 'v2.0 · Android 7.0+',
     'dl.and.apk': '下载 APK',
-    'dl.and.filename': '家庭时光-Android.apk',
     'dl.and.note': '自动备份 · mDNS 自动发现 · 共享相册',
     'features.label': '核心功能',
     'features.title': '一切为家庭数据管理而生',
@@ -831,17 +828,14 @@ const i18n = {
     'dl.win.name': 'Windows Server',
     'dl.win.version': 'v2.0 · Windows 10+',
     'dl.win.installer': 'Download Installer',
-    'dl.win.filename': 'HomeNAS-Windows-Installer.exe',
     'dl.win.note': 'Native desktop · Web UI built-in',
     'dl.mac.name': 'macOS Server',
     'dl.mac.version': 'v2.0 · macOS 12+',
     'dl.mac.dmg': 'Download DMG',
-    'dl.mac.filename': 'HomeNAS-macOS.dmg',
     'dl.mac.note': 'Native desktop · Web UI built-in',
     'dl.and.name': 'Android Client',
     'dl.and.version': 'v2.0 · Android 7.0+',
     'dl.and.apk': 'Download APK',
-    'dl.and.filename': 'HomeNAS-Android.apk',
     'dl.and.note': 'Auto backup · mDNS discovery · Shared albums',
     'features.label': 'Core Features',
     'features.title': 'Built for Family Data Management',
@@ -893,12 +887,6 @@ const i18n = {
 };
 
 // ===== Apply download links =====
-const DL_FILENAME_KEYS = {
-  'windows-installer': 'dl.win.filename',
-  'macos-dmg': 'dl.mac.filename',
-  'android-apk': 'dl.and.filename',
-};
-
 function applyDownloadLinks(lang) {
   const downloads = getDownloads(lang);
   document.querySelectorAll('[data-dl]').forEach(el => {
