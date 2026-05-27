@@ -4,8 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>家庭时光 - 家用私有云存储</title>
+<meta name="description" content="家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。">
+<meta name="keywords" content="私有云,NAS,家庭云存储,手机备份,照片备份,文件共享,个人云,HomeNAS,家庭时光,private cloud,home nas,photo backup,family cloud storage,auto backup">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="HomeNAS">
+<meta name="theme-color" content="#0b1120">
+<meta property="og:title" content="家庭时光 - 家用私有云存储">
+<meta property="og:description" content="家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://homenas.openyhx.workers.dev">
+<meta property="og:site_name" content="家庭时光 HomeNAS">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://homenas.openyhx.workers.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="家庭时光 - 家用私有云存储">
+<meta name="twitter:description" content="家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。">
+<meta name="twitter:image" content="https://homenas.openyhx.workers.dev/og-image.png">
+<link rel="canonical" href="https://homenas.openyhx.workers.dev">
+<link rel="alternate" hreflang="zh" href="https://homenas.openyhx.workers.dev">
+<link rel="alternate" hreflang="en" href="https://homenas.openyhx.workers.dev">
+<link rel="alternate" hreflang="x-default" href="https://homenas.openyhx.workers.dev">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='64' y2='64'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12L14 30h4v20h12V36h4v14h12V30h4L32 12z' fill='%23fff'/%3E%3Crect x='26' y='38' width='12' height='12' rx='2' fill='%230d9488'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='64' y2='64'%3E%3Cstop offset='0%25' stop-color='%233b82f6'/%3E%3Cstop offset='100%25' stop-color='%230d9488'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12L14 30h4v20h12V36h4v14h12V30h4L32 12z' fill='%23fff'/%3E%3Crect x='26' y='38' width='12' height='12' rx='2' fill='%230d9488'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "家庭时光 HomeNAS",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS, Windows, Linux, iOS, Android",
+  "description": "家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密。",
+  "url": "https://homenas.openyhx.workers.dev",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "HomeNAS"
+  }
+}
+</script>
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -436,6 +478,7 @@ const PLATFORM_DOWNLOADS = {
 const i18n = {
   'zh-CN': {
     pageTitle: '家庭时光 - 家用私有云存储',
+    metaDescription: '家庭时光是运行在家里的私有云存储。手机照片自动备份、多用户文件隔离、端到端 TLS 加密——免订阅，你才是数据的唯一拥有者。',
     'brand.name': '家庭时光',
     'nav.features': '功能',
     'nav.downloads': '下载',
@@ -544,6 +587,7 @@ const i18n = {
   },
   'en': {
     pageTitle: 'HomeNAS - Private Cloud Storage for Home',
+    metaDescription: 'HomeNAS is a private cloud storage that runs at home. Automatic photo backup, multi-user isolation, end-to-end TLS encryption — no subscription, you are the sole owner of your data.',
     'brand.name': 'HomeNAS',
     'nav.features': 'Features',
     'nav.downloads': 'Download',
@@ -741,6 +785,20 @@ function applyLang(lang) {
   const dict = i18n[lang];
   document.documentElement.lang = lang;
   document.title = dict.pageTitle;
+
+  // Update SEO meta tags
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && dict.metaDescription) metaDesc.content = dict.metaDescription;
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.content = dict.pageTitle;
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc && dict.metaDescription) ogDesc.content = dict.metaDescription;
+  const ogLocale = document.querySelector('meta[property="og:locale"]');
+  if (ogLocale) ogLocale.content = lang === 'zh-CN' ? 'zh_CN' : 'en_US';
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twTitle) twTitle.content = dict.pageTitle;
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twDesc && dict.metaDescription) twDesc.content = dict.metaDescription;
 
   // Update lang switcher buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {

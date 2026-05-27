@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://homenas.openyhx.workers.dev/sitemap.xml
