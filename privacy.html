@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FamilyNAS 客户端隐私政策</title>
+<meta name="description" content="FamilyNAS iOS 和 Android 客户端隐私政策。FamilyNAS 是自托管私有云相册，照片和视频存储在用户自己的 NAS 或家庭服务器上。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://homenas.openyhx.workers.dev/privacy.html">
+<link rel="icon" type="image/png" href="./launch_logo.png">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;line-height:1.72;color:#e2e8f0;background:#07111f}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 20% 0%,rgba(59,130,246,.22),transparent 34%),radial-gradient(circle at 80% 20%,rgba(20,184,166,.16),transparent 30%),#07111f}
+  a{color:#93c5fd;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:34px 22px 72px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:42px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:20px}
+  .brand img{width:36px;height:36px;border-radius:10px}
+  .back{font-size:14px;color:#bfdbfe}
+  .hero{padding:44px 0 28px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:34px}
+  h1{font-size:clamp(34px,6vw,52px);line-height:1.12;color:#fff;letter-spacing:-.03em;margin-bottom:14px}
+  .lead{font-size:17px;color:#b6c5d8;max-width:760px}
+  .meta{margin-top:18px;color:#8da2bb;font-size:14px}
+  .lang-nav{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+  .lang-nav a{display:inline-flex;padding:8px 13px;border:1px solid rgba(147,197,253,.25);border-radius:999px;background:rgba(255,255,255,.04);font-size:14px}
+  section{padding:28px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  h2{font-size:26px;color:#fff;margin-bottom:16px}
+  h3{font-size:18px;color:#dbeafe;margin:22px 0 8px}
+  p{margin:8px 0;color:#cbd5e1}
+  ul{padding-left:22px;margin:8px 0 14px}
+  li{margin:6px 0;color:#cbd5e1}
+  table{width:100%;border-collapse:collapse;margin:14px 0 20px;overflow:hidden;border-radius:10px}
+  th,td{border:1px solid rgba(255,255,255,.1);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:rgba(59,130,246,.15);color:#eaf2ff}
+  td{color:#cbd5e1;background:rgba(255,255,255,.03)}
+  .note{padding:14px 16px;border:1px solid rgba(45,212,191,.28);background:rgba(20,184,166,.09);border-radius:12px;color:#d1fae5}
+  footer{padding-top:26px;color:#8da2bb;font-size:14px}
+  @media(max-width:700px){.top{align-items:flex-start;flex-direction:column}table{font-size:13px}th,td{padding:8px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">
+    <a class="brand" href="./index.html"><img src="./launch_logo.png" alt="FamilyNAS">FamilyNAS</a>
+    <a class="back" href="./index.html">返回官网 / Back to Home</a>
+  </div>
+
+  <header class="hero">
+    <h1>FamilyNAS 客户端隐私政策</h1>
+    <p class="lead">FamilyNAS 是自托管私有云相册与备份工具。客户端用于把照片、视频和家庭重要时刻备份到用户自己的 NAS 或家庭服务器，并通过共享相册与家人协作。</p>
+    <p class="meta">最后更新：2026-05-30</p>
+  </header>
+
+  <nav class="lang-nav">
+    <a href="#zh">中文</a>
+    <a href="#en">English</a>
+    <a href="#ja">日本語</a>
+  </nav>
+
+  <section id="zh">
+    <h2>中文版</h2>
+    <p class="note">本政策适用于 FamilyNAS iOS 与 Android 客户端。FamilyNAS 不提供公共云存储服务；照片、视频和文件默认存储在用户自己安装并管理的 FamilyNAS 服务端上。</p>
+
+    <h3>1. 我们访问的数据</h3>
+    <table>
+      <thead><tr><th>数据类型</th><th>用途</th><th>是否离开设备</th></tr></thead>
+      <tbody>
+        <tr><td>照片、视频、实况照片</td><td>用户选择备份、浏览、预览或加入共享相册时使用</td><td>仅传输到用户自己的 FamilyNAS 服务端</td></tr>
+        <tr><td>设备名称、系统版本、App 版本</td><td>在服务端识别设备，便于多设备管理</td><td>仅传输到用户自己的 FamilyNAS 服务端</td></tr>
+        <tr><td>局域网信息</td><td>自动发现同一 Wi-Fi 下的 FamilyNAS 服务端</td><td>不上传到我们的服务器</td></tr>
+        <tr><td>相机</td><td>扫描服务端二维码以快速连接</td><td>不上传到我们的服务器</td></tr>
+        <tr><td>崩溃日志、诊断信息、基础使用事件</td><td>通过 Firebase Analytics 和 Crashlytics 改进稳定性和体验</td><td>可能发送至 Google/Firebase</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2. 数据存储位置</h3>
+    <p>用户的照片、视频、共享相册内容和文件元数据存储在用户自己的 NAS、Mac、Windows 电脑或其他家庭服务器上。FamilyNAS 客户端不会把用户的媒体文件上传到我们的公共服务器。</p>
+
+    <h3>3. 分享与共享相册</h3>
+    <p>FamilyNAS 支持家庭成员通过共享相册记录和分享孩子成长经历、旅行、生日、节日聚会和其他家庭重要时刻。共享内容只会在用户自己的服务端和被授权的家庭成员之间访问。</p>
+
+    <h3>4. 安全措施</h3>
+    <ul>
+      <li>客户端与服务端通过 HTTPS/TLS 加密通信。</li>
+      <li>客户端使用证书指纹校验，降低中间人攻击风险。</li>
+      <li>家庭成员使用独立账号，文件默认隔离，仅用户主动共享的内容才会出现在共享相册中。</li>
+    </ul>
+
+    <h3>5. 我们不做什么</h3>
+    <ul>
+      <li>不出售、出租或交易用户个人信息。</li>
+      <li>不使用广告 SDK。</li>
+      <li>不追踪用户跨 App 或跨网站行为。</li>
+      <li>不在我们的服务器保存用户照片、视频或家庭相册内容。</li>
+    </ul>
+
+    <h3>6. 用户控制权</h3>
+    <p>用户可以在系统设置中撤销相册、相机、局域网、通知等权限；也可以在 FamilyNAS 服务端管理页面删除文件、停用设备或删除账号。卸载客户端会清除本机缓存和登录令牌。</p>
+
+    <h3>7. 儿童隐私</h3>
+    <p>FamilyNAS 可用于家庭成员保存和分享孩子成长记录，但我们不会主动收集儿童个人信息。相关媒体文件由用户自行保存在自己的私有服务端。</p>
+
+    <h3>8. 联系我们</h3>
+    <p>如有隐私相关问题，请通过 <a href="mailto:huasen520520@outlook.com">huasen520520@outlook.com</a> 联系我们。</p>
+  </section>
+
+  <section id="en">
+    <h2>English Version</h2>
+    <p class="note">This policy applies to the FamilyNAS iOS and Android clients. FamilyNAS does not provide public cloud storage. Photos, videos, and files are stored on the FamilyNAS server installed and managed by the user.</p>
+
+    <h3>1. Data We Access</h3>
+    <table>
+      <thead><tr><th>Data</th><th>Purpose</th><th>Leaves the device?</th></tr></thead>
+      <tbody>
+        <tr><td>Photos, videos, and Live Photos</td><td>Backup, browsing, previewing, and shared albums selected by the user</td><td>Only transferred to the user's own FamilyNAS server</td></tr>
+        <tr><td>Device name, OS version, app version</td><td>Identify and manage devices on the user's server</td><td>Only transferred to the user's own FamilyNAS server</td></tr>
+        <tr><td>Local network information</td><td>Discover a FamilyNAS server on the same Wi-Fi network</td><td>Not uploaded to our servers</td></tr>
+        <tr><td>Camera</td><td>Scan the server QR code for quick connection</td><td>Not uploaded to our servers</td></tr>
+        <tr><td>Crash logs, diagnostics, and basic usage events</td><td>Improve stability and app experience through Firebase Analytics and Crashlytics</td><td>May be sent to Google/Firebase</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2. Where Data Is Stored</h3>
+    <p>The user's photos, videos, shared album content, and file metadata are stored on the user's own NAS, Mac, Windows PC, or other home server. The FamilyNAS client does not upload user media files to our public servers.</p>
+
+    <h3>3. Sharing and Shared Albums</h3>
+    <p>FamilyNAS helps family members record and share a child's growth, trips, birthdays, holidays, and other important family moments through shared albums. Shared content is accessible only through the user's own server and authorized family members.</p>
+
+    <h3>4. Security</h3>
+    <ul>
+      <li>The client communicates with the server over HTTPS/TLS.</li>
+      <li>Certificate fingerprint verification helps reduce man-in-the-middle risks.</li>
+      <li>Family members use separate accounts. Files are private by default, and only content selected by the user appears in shared albums.</li>
+    </ul>
+
+    <h3>5. What We Do Not Do</h3>
+    <ul>
+      <li>We do not sell, rent, or trade personal information.</li>
+      <li>We do not use advertising SDKs.</li>
+      <li>We do not track users across apps or websites.</li>
+      <li>We do not store user photos, videos, or family album content on our servers.</li>
+    </ul>
+
+    <h3>6. User Control</h3>
+    <p>Users can revoke photo library, camera, local network, and notification permissions in system settings. Users can also delete files, revoke devices, or remove accounts from the FamilyNAS server admin page. Uninstalling the client clears local caches and login tokens.</p>
+
+    <h3>7. Children's Privacy</h3>
+    <p>FamilyNAS may be used by families to store and share a child's growth records, but we do not knowingly collect children's personal information. Related media files are stored by users on their own private servers.</p>
+
+    <h3>8. Contact</h3>
+    <p>For privacy questions, contact us at <a href="mailto:huasen520520@outlook.com">huasen520520@outlook.com</a>.</p>
+  </section>
+
+  <section id="ja">
+    <h2>日本語版</h2>
+    <p class="note">本ポリシーは FamilyNAS の iOS / Android クライアントに適用されます。FamilyNAS は公共クラウドストレージを提供しません。写真、動画、ファイルは、ユーザー自身が設置・管理する FamilyNAS サーバーに保存されます。</p>
+
+    <h3>1. アクセスするデータ</h3>
+    <table>
+      <thead><tr><th>データ</th><th>目的</th><th>端末外へ送信されるか</th></tr></thead>
+      <tbody>
+        <tr><td>写真、動画、Live Photos</td><td>ユーザーが選択したバックアップ、閲覧、プレビュー、共有アルバム</td><td>ユーザー自身の FamilyNAS サーバーにのみ送信</td></tr>
+        <tr><td>端末名、OS バージョン、アプリバージョン</td><td>ユーザーのサーバー上で端末を識別・管理するため</td><td>ユーザー自身の FamilyNAS サーバーにのみ送信</td></tr>
+        <tr><td>ローカルネットワーク情報</td><td>同じ Wi-Fi 内の FamilyNAS サーバーを検出するため</td><td>当社サーバーには送信しません</td></tr>
+        <tr><td>カメラ</td><td>サーバーの QR コードを読み取り、すばやく接続するため</td><td>当社サーバーには送信しません</td></tr>
+        <tr><td>クラッシュログ、診断情報、基本的な利用イベント</td><td>Firebase Analytics と Crashlytics による安定性と体験の改善</td><td>Google/Firebase に送信される場合があります</td></tr>
+      </tbody>
+    </table>
+
+    <h3>2. データの保存場所</h3>
+    <p>写真、動画、共有アルバムの内容、ファイルメタデータは、ユーザー自身の NAS、Mac、Windows PC、または家庭内サーバーに保存されます。FamilyNAS クライアントは、ユーザーのメディアファイルを当社の公共サーバーへアップロードしません。</p>
+
+    <h3>3. 共有と共有アルバム</h3>
+    <p>FamilyNAS は、子どもの成長、旅行、誕生日、行事、家族の大切な瞬間を共有アルバムで記録・共有できます。共有内容は、ユーザー自身のサーバーと許可された家族メンバーのみがアクセスできます。</p>
+
+    <h3>4. セキュリティ</h3>
+    <ul>
+      <li>クライアントとサーバーは HTTPS/TLS で通信します。</li>
+      <li>証明書フィンガープリント検証により、中間者攻撃のリスクを低減します。</li>
+      <li>家族メンバーは個別アカウントを使用します。ファイルは既定で非公開で、ユーザーが選択した内容のみ共有アルバムに表示されます。</li>
+    </ul>
+
+    <h3>5. 当社が行わないこと</h3>
+    <ul>
+      <li>個人情報を販売、貸与、取引しません。</li>
+      <li>広告 SDK を使用しません。</li>
+      <li>アプリや Web サイトをまたいだ追跡を行いません。</li>
+      <li>ユーザーの写真、動画、家族アルバムの内容を当社サーバーに保存しません。</li>
+    </ul>
+
+    <h3>6. ユーザーの管理</h3>
+    <p>ユーザーはシステム設定で写真、カメラ、ローカルネットワーク、通知の権限を取り消せます。また、FamilyNAS サーバー管理ページからファイル削除、端末無効化、アカウント削除を行えます。クライアントをアンインストールすると、ローカルキャッシュとログイントークンが削除されます。</p>
+
+    <h3>7. 子どものプライバシー</h3>
+    <p>FamilyNAS は家族が子どもの成長記録を保存・共有するために利用できますが、当社が意図的に子どもの個人情報を収集することはありません。関連するメディアファイルは、ユーザー自身のプライベートサーバーに保存されます。</p>
+
+    <h3>8. お問い合わせ</h3>
+    <p>プライバシーに関するお問い合わせは <a href="mailto:huasen520520@outlook.com">huasen520520@outlook.com</a> までご連絡ください。</p>
+  </section>
+
+  <footer>
+    <p>© 2026 FamilyNAS · <a href="./index.html">Home</a></p>
+  </footer>
+</main>
+</body>
+</html>
