@@ -34,7 +34,7 @@
   "@type": "SoftwareApplication",
   "name": "FamilyNAS",
   "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "macOS, Windows, Android",
+  "operatingSystem": "macOS, Windows, Android, iOS",
   "description": "FamilyNAS is a private cloud storage that runs at home. Automatic photo backup, multi-user file isolation, end-to-end TLS encryption.",
   "url": "https://homenas.openyhx.workers.dev",
   "offers": {
@@ -218,6 +218,7 @@
   .dl-card-new .dl-icon-wrap.win{background:rgba(59,130,246,.1);color:#60a5fa;box-shadow:0 0 30px rgba(59,130,246,.1)}
   .dl-card-new .dl-icon-wrap.mac{background:rgba(148,163,184,.08);color:#94a3b8;box-shadow:0 0 30px rgba(148,163,184,.06)}
   .dl-card-new .dl-icon-wrap.and{background:rgba(74,222,128,.08);color:#4ade80;box-shadow:0 0 30px rgba(74,222,128,.08)}
+  .dl-card-new .dl-icon-wrap.ios{background:rgba(148,163,184,.08);color:#cbd5e1;box-shadow:0 0 30px rgba(148,163,184,.08)}
   .dl-card-new h3{font-size:19px;font-weight:700;color:#f1f5f9;margin-bottom:4px}
   .dl-card-new .dl-ver{font-size:11px;color:#64748b;margin-bottom:8px;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);display:inline-block}
   .dl-card-new .dl-role{font-size:10px;color:#475569;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.02)}
@@ -230,8 +231,13 @@
   .dl-card-new .dl-btn-new.mac:hover{box-shadow:0 8px 32px rgba(71,85,105,.45);transform:translateY(-2px)}
   .dl-card-new .dl-btn-new.and{background:linear-gradient(135deg,#16a34a,#15803d);box-shadow:0 4px 20px rgba(22,163,74,.3)}
   .dl-card-new .dl-btn-new.and:hover{box-shadow:0 8px 32px rgba(22,163,74,.45);transform:translateY(-2px)}
+  .dl-card-new .dl-btn-new.ios{background:linear-gradient(135deg,#475569,#0f172a);box-shadow:0 4px 20px rgba(71,85,105,.3)}
+  .dl-card-new .dl-btn-new.ios:hover{box-shadow:0 8px 32px rgba(71,85,105,.45);transform:translateY(-2px)}
   .dl-card-new .dl-btn-new::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);transform:translateX(-100%);transition:transform .5s}
   .dl-card-new .dl-btn-new:hover::after{transform:translateX(100%)}
+  .dl-qr{margin-top:18px;padding:12px;border-radius:14px;background:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 32px rgba(0,0,0,.28);display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:1}
+  .dl-qr img{width:136px;height:136px;display:block}
+  .dl-qr span{font-size:12px;font-weight:600;color:#0f172a;line-height:1.3}
   @media(max-width:768px){
     .dl-grid-new{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}
   }
@@ -334,7 +340,7 @@
   <div class="container">
     <div class="hero-badge animate" style="opacity:0"><span class="dot"></span><span data-i18n="hero.badge">v2.0 — 全新多用户 & SQLite 架构</span></div>
     <h1 class="animate animate-d1" style="opacity:0" data-i18n="hero.title">你的数据<br>归于你自己</h1>
-    <p class="animate animate-d2" style="opacity:0" data-i18n="hero.desc">在家的电脑上部署服务端，Android 手机自动备份照片视频。多用户隔离、TLS 加密传输——免订阅，不限容量。</p>
+    <p class="animate animate-d2" style="opacity:0" data-i18n="hero.desc">在家的电脑上部署服务端，手机自动备份照片视频。多用户隔离、TLS 加密传输——免订阅，不限容量。</p>
     <div class="hero-actions animate animate-d3" style="opacity:0">
       <a href="#guide" class="btn btn-primary" data-i18n="hero.cta1">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -350,7 +356,7 @@
   <div class="container">
     <div class="section-label" data-i18n="overview.label">系统概览</div>
     <h2 class="section-title" data-i18n="overview.title">服务端 + 管理面板 + 手机 App 三端协作</h2>
-    <p class="section-desc" data-i18n="overview.desc">在电脑上运行服务端，通过浏览器管理用户和设备，Android 手机自动备份照片视频到家中服务器。</p>
+    <p class="section-desc" data-i18n="overview.desc">在电脑上运行服务端，通过浏览器管理用户和设备，手机自动备份照片视频到家中服务器。</p>
     <div class="arch-grid">
       <div class="arch-card">
         <span class="arch-arrow">→</span>
@@ -366,7 +372,7 @@
       </div>
       <div class="arch-card">
         <div class="arch-icon" style="background:rgba(74,222,128,.08);color:#4ade80">📱</div>
-        <h3 data-i18n="overview.a3t">Android 手机 App</h3>
+        <h3 data-i18n="overview.a3t">手机 App</h3>
         <p data-i18n="overview.a3d">安装 App 后用注册码配对，连接家中 Wi-Fi 即自动备份相册。支持增量上传与哈希去重，省流量省空间。</p>
       </div>
     </div>
@@ -377,8 +383,8 @@
 <section id="platforms" style="background:rgba(255,255,255,.015)">
   <div class="container">
     <div class="section-label" data-i18n="platforms.label">平台支持</div>
-    <h2 class="section-title" data-i18n="platforms.title">当前支持桌面端 + Android</h2>
-    <p class="section-desc" data-i18n="platforms.desc">服务端运行在你的电脑上，客户端安装在 Android 手机上。iOS 版本正在开发中。</p>
+    <h2 class="section-title" data-i18n="platforms.title">当前支持桌面端 + Android / iOS</h2>
+    <p class="section-desc" data-i18n="platforms.desc">服务端运行在你的电脑上，客户端安装在 Android 或 iOS 手机上。</p>
     <div class="platform-table">
       <div class="platform-row">
         <div class="p-icon" style="background:rgba(59,130,246,.1);color:#60a5fa">
@@ -401,12 +407,12 @@
         <div class="p-info"><h4 data-i18n="platforms.android">Android 客户端</h4><span data-i18n="platforms.android.desc">Android 7.0 及以上，自动备份 · 共享相册</span></div>
         <span class="p-badge client" data-i18n="platforms.badge.client">客户端</span>
       </div>
-      <div class="platform-row" style="opacity:.5">
-        <div class="p-icon" style="background:rgba(148,163,184,.04);color:#64748b">
+      <div class="platform-row">
+        <div class="p-icon" style="background:rgba(148,163,184,.08);color:#cbd5e1">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         </div>
-        <div class="p-info"><h4 data-i18n="platforms.ios">iOS 客户端</h4><span data-i18n="platforms.ios.desc">开发中，敬请期待</span></div>
-        <span class="p-badge coming" data-i18n="platforms.badge.coming">开发中</span>
+        <div class="p-info"><h4 data-i18n="platforms.ios">iOS 客户端</h4><span data-i18n="platforms.ios.desc">已上架 App Store，自动备份 · 共享相册</span></div>
+        <span class="p-badge client" data-i18n="platforms.badge.client">客户端</span>
       </div>
     </div>
   </div>
@@ -434,7 +440,7 @@
         <div class="g-body">
           <span class="g-tag phone" data-i18n="guide.tag.phone">手机端</span>
           <h3 data-i18n="guide.g2t">手机安装 App 并配对</h3>
-          <p data-i18n="guide.g2d">Android 手机下载安装 APK，打开后自动发现局域网服务器并完成配对。</p>
+          <p data-i18n="guide.g2d">Android 手机下载安装 APK，iPhone 从 App Store 安装，打开后自动发现局域网服务器并完成配对。</p>
         </div>
       </div>
 
@@ -514,6 +520,29 @@
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             下载 APK
           </a>
+          <div class="dl-qr">
+            <img src="./android-apk-qr.svg" alt="Android APK 下载二维码" width="136" height="136">
+            <span data-i18n="dl.and.qr">扫码下载 APK</span>
+          </div>
+        </div>
+        <!-- iOS -->
+        <div class="dl-card-new" data-platform="ios">
+          <span class="rec-tag" data-i18n="dl.recommend.badge">推荐</span>
+          <div class="dl-icon-wrap ios">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </div>
+          <h3 data-i18n="dl.ios.name">iOS 客户端</h3>
+          <span class="dl-ver" data-i18n="dl.ios.version">App Store · iPhone / iPad</span>
+          <span class="dl-role" data-i18n="dl.role.client">客户端</span>
+          <div class="dl-meta"><span data-i18n="dl.ios.note">自动备份 · mDNS 自动发现 · 共享相册</span></div>
+          <a data-dl="ios-app-store" class="dl-btn-new ios" data-i18n="dl.ios.store">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            App Store
+          </a>
+          <div class="dl-qr">
+            <img src="./ios-app-qr.svg" alt="iOS App Store 二维码" width="136" height="136">
+            <span data-i18n="dl.ios.qr">扫码打开 App Store</span>
+          </div>
         </div>
       </div>
     </div>
@@ -577,7 +606,7 @@
       <details><summary data-i18n="faq.q7">支持哪些类型的文件？</summary><div class="faq-body" data-i18n="faq.a7">支持照片和视频备份。服务端自动生成缩略图，Web UI 和 App 均可直接预览和播放。</div></details>
       <details><summary data-i18n="faq.q8">换手机了怎么办？</summary><div class="faq-body" data-i18n="faq.a8">在新手机上安装 App，用同一账户的注册码重新绑定即可。已备份的文件不受影响。如需注销旧设备，可在 Web 管理面板的「设备」页撤销旧设备的 Token。</div></details>
       <details><summary data-i18n="faq.q9">如何更新服务端版本？</summary><div class="faq-body" data-i18n="faq.a9">下载新版本安装包覆盖安装即可。v1 到 v2 的升级会自动将原有数据迁移到 SQLite 数据库，无需手动操作。原始 JSON 文件会保留，可作为回滚备份。</div></details>
-      <details><summary data-i18n="faq.q10">目前支持哪些平台？</summary><div class="faq-body" data-i18n="faq.a10">服务端支持 macOS 12+ 和 Windows 10+。客户端支持 Android 7.0+。iOS 客户端正在开发中。</div></details>
+      <details><summary data-i18n="faq.q10">目前支持哪些平台？</summary><div class="faq-body" data-i18n="faq.a10">服务端支持 macOS 12+ 和 Windows 10+。客户端支持 Android 7.0+ 和 iOS。</div></details>
       <details><summary data-i18n="faq.q11">FamilyNAS是免费的吗？</summary><div class="faq-body" data-i18n="faq.a11">是的，完全免费。没有订阅费、没有容量限制、没有功能锁。</div></details>
     </div>
   </div>
@@ -615,12 +644,14 @@ const DOWNLOADS_ZH = {
   'windows-installer': './FamilyNAS-amd64-installer.exe',
   'macos-dmg':         './FamilyNAS.dmg',
   'android-apk':       './HomeNAS_1.0.0_20260530_125134.apk',
+  'ios-app-store':     'https://apps.apple.com/app/familynas/id6770559735',
 };
 
 const DOWNLOADS_EN = {
   'windows-installer': './FamilyNAS-amd64-installer.exe',
   'macos-dmg':         './FamilyNAS.dmg',
   'android-apk':       './HomeNAS_1.0.0_20260530_125134.apk',
+  'ios-app-store':     'https://apps.apple.com/app/familynas/id6770559735',
 };
 
 function getDownloads(lang) {
@@ -631,7 +662,8 @@ const PLATFORM_DOWNLOADS = {
   macos:   ['macos-dmg'],
   windows: ['windows-installer'],
   android: ['android-apk'],
-  unknown: ['windows-installer', 'macos-dmg', 'android-apk'],
+  ios:     ['ios-app-store'],
+  unknown: ['windows-installer', 'macos-dmg', 'android-apk', 'ios-app-store'],
 };
 
 // ===== I18N =====
@@ -647,21 +679,21 @@ const i18n = {
     'nav.faq': '常见问题',
     'hero.badge': 'v2.0 — 全新多用户 & SQLite 架构',
     'hero.title': '你的数据<br>归于你自己',
-    'hero.desc': '在家的电脑上部署服务端，Android 手机自动备份照片视频。多用户隔离、TLS 加密传输——免订阅，不限容量。',
+    'hero.desc': '在家的电脑上部署服务端，手机自动备份照片视频。多用户隔离、TLS 加密传输——免订阅，不限容量。',
     'hero.cta1': '开始部署',
     'hero.cta2': '直接下载 →',
     'overview.label': '系统概览',
     'overview.title': '服务端 + 管理面板 + 手机 App 三端协作',
-    'overview.desc': '在电脑上运行服务端，通过浏览器管理用户和设备，Android 手机自动备份照片视频到家中服务器。',
+    'overview.desc': '在电脑上运行服务端，通过浏览器管理用户和设备，手机自动备份照片视频到家中服务器。',
     'overview.a1t': '桌面服务端',
     'overview.a1d': '在 macOS 或 Windows 电脑上运行 <code>nas-server</code>，作为文件存储和管理的核心。轻量级 Go 程序，空闲内存不到 20MB。',
     'overview.a2t': 'Web 管理面板',
     'overview.a2d': '浏览器打开 <code>https://&lt;IP&gt;:8443</code> 即可管理一切：创建家庭成员账户、生成设备注册码、浏览和分享文件。',
-    'overview.a3t': 'Android 手机 App',
+    'overview.a3t': '手机 App',
     'overview.a3d': '安装 App 后用注册码配对，连接家中 Wi-Fi 即自动备份相册。支持增量上传与哈希去重，省流量省空间。',
     'platforms.label': '平台支持',
-    'platforms.title': '当前支持桌面端 + Android',
-    'platforms.desc': '服务端运行在你的电脑上，客户端安装在 Android 手机上。iOS 版本正在开发中。',
+    'platforms.title': '当前支持桌面端 + Android / iOS',
+    'platforms.desc': '服务端运行在你的电脑上，客户端安装在 Android 或 iOS 手机上。',
     'platforms.windows': 'Windows 服务端',
     'platforms.windows.desc': 'Windows 10 及以上，原生桌面应用',
     'platforms.macos': 'macOS 服务端',
@@ -669,10 +701,9 @@ const i18n = {
     'platforms.android': 'Android 客户端',
     'platforms.android.desc': 'Android 7.0 及以上，自动备份 · 共享相册',
     'platforms.ios': 'iOS 客户端',
-    'platforms.ios.desc': '开发中，敬请期待',
+    'platforms.ios.desc': '已上架 App Store，自动备份 · 共享相册',
     'platforms.badge.server': '服务端',
     'platforms.badge.client': '客户端',
-    'platforms.badge.coming': '开发中',
     'guide.label': '使用指引',
     'guide.title': '两步完成搭建',
     'guide.desc': '桌面端下载运行，创建家庭账号；手机端下载 App，输入注册码配对即可。',
@@ -681,7 +712,7 @@ const i18n = {
     'guide.g1t': '下载服务端并创建账号',
     'guide.g1d': 'macOS 下载 <code>.dmg</code>、Windows 下载 <code>.exe</code>，安装运行后创建家庭成员账号。',
     'guide.g2t': '手机安装 App 并配对',
-    'guide.g2d': 'Android 手机下载安装 APK，打开后自动发现局域网服务器并完成配对。',
+    'guide.g2d': 'Android 手机下载安装 APK，iPhone 从 App Store 安装，打开后自动发现局域网服务器并完成配对。',
     'dl.label': '多端下载',
     'dl.title': '选择你的平台',
     'dl.desc': '所有版本均免费。服务端安装在电脑上，客户端安装在手机上。',
@@ -691,10 +722,12 @@ const i18n = {
     'dl.recommend.badge': '推荐',
     'dl.platform.macos': '已识别：macOS',
     'dl.platform.android': '已识别：Android',
+    'dl.platform.ios': '已识别：iOS',
     'dl.platform.windows': '已识别：Windows',
     'dl.platform.unknown': '未识别设备',
     'dl.recommended.macos': '当前是 macOS。建议下载 macOS 桌面客户端作为服务端。',
     'dl.recommended.android': '当前是 Android。建议下载 APK 安装包。',
+    'dl.recommended.ios': '当前是 iOS。建议前往 App Store 安装 FamilyNAS。',
     'dl.recommended.windows': '当前是 Windows。建议下载 Windows 安装程序作为服务端。',
     'dl.recommended.unknown': '没有识别出当前平台。请从下方选择：服务端安装在电脑上，客户端安装在手机上。',
     'dl.group.server': '🖥️ 服务端（安装在你家里的电脑上）',
@@ -713,6 +746,12 @@ const i18n = {
     'dl.and.version': 'v2.0 · Android 7.0+',
     'dl.and.apk': '下载 APK',
     'dl.and.note': '自动备份 · mDNS 自动发现 · 共享相册',
+    'dl.and.qr': '扫码下载 APK',
+    'dl.ios.name': 'iOS 客户端',
+    'dl.ios.version': 'App Store · iPhone / iPad',
+    'dl.ios.store': 'App Store',
+    'dl.ios.note': '自动备份 · mDNS 自动发现 · 共享相册',
+    'dl.ios.qr': '扫码打开 App Store',
     'features.label': '核心功能',
     'features.title': '一切为家庭数据管理而生',
     'features.desc': '从自动备份到安全分享，覆盖照片和视频的全生命周期。',
@@ -749,7 +788,7 @@ const i18n = {
     'faq.q9': '如何更新服务端版本？',
     'faq.a9': '下载新版本安装包覆盖安装即可。v1 到 v2 的升级会自动将原有数据迁移到 SQLite 数据库，无需手动操作。原始 JSON 文件会保留，可作为回滚备份。',
     'faq.q10': '目前支持哪些平台？',
-    'faq.a10': '服务端支持 macOS 12+ 和 Windows 10+。客户端支持 Android 7.0+。iOS 客户端正在开发中。',
+    'faq.a10': '服务端支持 macOS 12+ 和 Windows 10+。客户端支持 Android 7.0+ 和 iOS。',
     'faq.q11': 'FamilyNAS是免费的吗？',
     'faq.a11': '是的，完全免费。没有订阅费、没有容量限制、没有功能锁。',
     'cta.title': '准备好掌控自己的数据了吗？',
@@ -771,21 +810,21 @@ const i18n = {
     'nav.faq': 'FAQ',
     'hero.badge': 'v2.0 — Multi-User & SQLite Architecture',
     'hero.title': 'Your Data<br>Belongs to You',
-    'hero.desc': 'Deploy the server on your computer, Android phone auto-backs up photos & videos. Multi-user isolation, TLS encryption — no subscription, no storage limits.',
+    'hero.desc': 'Deploy the server on your computer, and your phone auto-backs up photos & videos. Multi-user isolation, TLS encryption — no subscription, no storage limits.',
     'hero.cta1': 'Get Started',
     'hero.cta2': 'Download →',
     'overview.label': 'System Overview',
     'overview.title': 'Server + Web Panel + Mobile App Working Together',
-    'overview.desc': 'Run the server on your computer, manage users and devices via browser, Android phone auto-backs up photos and videos to your home server.',
+    'overview.desc': 'Run the server on your computer, manage users and devices via browser, and your phone auto-backs up photos and videos to your home server.',
     'overview.a1t': 'Desktop Server',
     'overview.a1d': 'Run <code>nas-server</code> on macOS or Windows as the core for file storage and management. Lightweight Go program, under 20MB memory at idle.',
     'overview.a2t': 'Web Admin Panel',
     'overview.a2d': 'Open <code>https://&lt;IP&gt;:8443</code> in your browser to manage everything: create family accounts, generate device codes, browse and share files.',
-    'overview.a3t': 'Android App',
+    'overview.a3t': 'Mobile App',
     'overview.a3d': 'Install the app, pair with a registration code, and auto-backup your camera roll when connected to home Wi-Fi. Incremental upload with hash dedup.',
     'platforms.label': 'Platform Support',
-    'platforms.title': 'Desktop + Android Supported',
-    'platforms.desc': 'Server runs on your computer, client app on your Android phone. iOS is under development.',
+    'platforms.title': 'Desktop + Android / iOS Supported',
+    'platforms.desc': 'Server runs on your computer, client app runs on Android or iOS phones.',
     'platforms.windows': 'Windows Server',
     'platforms.windows.desc': 'Windows 10+, native desktop app',
     'platforms.macos': 'macOS Server',
@@ -793,10 +832,9 @@ const i18n = {
     'platforms.android': 'Android Client',
     'platforms.android.desc': 'Android 7.0+, auto backup · shared albums',
     'platforms.ios': 'iOS Client',
-    'platforms.ios.desc': 'Under development, coming soon',
+    'platforms.ios.desc': 'Available on the App Store, auto backup · shared albums',
     'platforms.badge.server': 'Server',
     'platforms.badge.client': 'Client',
-    'platforms.badge.coming': 'Coming Soon',
     'guide.label': 'Getting Started',
     'guide.title': 'Two Steps to Get Started',
     'guide.desc': 'Download and run on desktop, create family accounts. Install the app on your phone, pair with a registration code.',
@@ -805,7 +843,7 @@ const i18n = {
     'guide.g1t': 'Download Server & Create Accounts',
     'guide.g1d': 'Download <code>.dmg</code> for macOS or <code>.exe</code> for Windows. Install and run, then create family member accounts.',
     'guide.g2t': 'Install App & Pair',
-    'guide.g2d': 'Download and install the APK on your Android phone. The app auto-discovers the server on your LAN and pairs with it.',
+    'guide.g2d': 'Download the APK on Android or install from the App Store on iPhone. The app auto-discovers the server on your LAN and pairs with it.',
     'dl.label': 'Downloads',
     'dl.title': 'Choose Your Platform',
     'dl.desc': 'All versions are free. Server goes on your computer, client goes on your phone.',
@@ -815,10 +853,12 @@ const i18n = {
     'dl.recommend.badge': 'Recommended',
     'dl.platform.macos': 'Detected: macOS',
     'dl.platform.android': 'Detected: Android',
+    'dl.platform.ios': 'Detected: iOS',
     'dl.platform.windows': 'Detected: Windows',
     'dl.platform.unknown': 'Device not recognized',
     'dl.recommended.macos': 'You are on macOS. Download the macOS desktop app as server.',
     'dl.recommended.android': 'You are on Android. Download the APK package.',
+    'dl.recommended.ios': 'You are on iOS. Install FamilyNAS from the App Store.',
     'dl.recommended.windows': 'You are on Windows. Download the Windows installer as server.',
     'dl.recommended.unknown': 'Could not identify this platform. Choose below: server for your computer, client for your phone.',
     'dl.group.server': '🖥️ Server (install on your home computer)',
@@ -837,6 +877,12 @@ const i18n = {
     'dl.and.version': 'v2.0 · Android 7.0+',
     'dl.and.apk': 'Download APK',
     'dl.and.note': 'Auto backup · mDNS discovery · Shared albums',
+    'dl.and.qr': 'Scan to download APK',
+    'dl.ios.name': 'iOS Client',
+    'dl.ios.version': 'App Store · iPhone / iPad',
+    'dl.ios.store': 'App Store',
+    'dl.ios.note': 'Auto backup · mDNS discovery · Shared albums',
+    'dl.ios.qr': 'Scan to open App Store',
     'features.label': 'Core Features',
     'features.title': 'Built for Family Data Management',
     'features.desc': 'From automatic backup to secure sharing, covering the full lifecycle of photos and videos.',
@@ -873,7 +919,7 @@ const i18n = {
     'faq.q9': 'How do I update the server?',
     'faq.a9': 'Download the new version installer and install over the existing one. Upgrading from v1 to v2 automatically migrates data to SQLite — no manual steps needed. Original JSON files are preserved as backup.',
     'faq.q10': 'Which platforms are currently supported?',
-    'faq.a10': 'Server: macOS 12+ and Windows 10+. Client: Android 7.0+. iOS client is under development.',
+    'faq.a10': 'Server: macOS 12+ and Windows 10+. Client: Android 7.0+ and iOS.',
     'faq.q11': 'Is FamilyNAS free?',
     'faq.a11': 'Yes, completely free. No subscription fees, no storage limits, no feature locks.',
     'cta.title': 'Ready to Take Control of Your Data?',
@@ -913,6 +959,7 @@ function detectPlatform() {
   const text = `${ua} ${platform} ${uaDataPlatform}`.toLowerCase();
 
   if (/android/.test(text)) return 'android';
+  if (/iphone|ipad|ipod/.test(text) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return 'ios';
   if (/mac/.test(text)) return 'macos';
   if (/win/.test(text)) return 'windows';
   return 'unknown';
@@ -930,6 +977,7 @@ function applyPlatformRecommendation(lang) {
     'windows-installer': 'dl.win.installer',
     'macos-dmg': 'dl.mac.dmg',
     'android-apk': 'dl.and.apk',
+    'ios-app-store': 'dl.ios.store',
   };
 
   if (bar && msgEl && platform !== 'unknown') {
